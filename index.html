@@ -1,170 +1,194 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firas Bouricha - DevOps & Linux Specialist</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * { scroll-behavior: smooth; }
-    .hero-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    .skill-card { backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); }
-    .project-card { transition: transform 0.3s, box-shadow 0.3s; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px rgba(0,0,0,0.2); }
+    * {
+      scroll-behavior: smooth;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .skill-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .project-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
+
 <body class="bg-slate-900 text-white">
 
-<!-- Navigation -->
-<nav class="fixed w-full bg-slate-950/90 backdrop-blur-sm z-50 border-b border-slate-800">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">Firas B.</h1>
-    <div class="hidden md:flex gap-8">
-      <a href="#about" class="hover:text-blue-400 transition">À propos</a>
-      <a href="#skills" class="hover:text-blue-400 transition">Compétences</a>
-      <a href="#projects" class="hover:text-blue-400 transition">Projets</a>
-      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero-gradient pt-32 pb-20 text-center">
-  <div class="max-w-4xl mx-auto px-6">
-    <img src="profile.jpg" alt="Firas" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
-    <h1 class="text-5xl font-bold mb-4">Firas Bouricha</h1>
-    <p class="text-xl text-blue-100 mb-4">DevOps | Cybersécurité | Linux Administrator</p>
-    <p class="text-lg text-blue-50 mb-8 max-w-2xl mx-auto">Étudiant en Mastère Cloud, Sécurité & Infrastructure @ Ynov Campus. Passionné par l'automatisation, les systèmes et la cybersécurité.</p>
-    <div class="flex gap-4 justify-center">
-      <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">Me Contacter</a>
-      <a href="https://github.com/fibou1" target="_blank" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">GitHub</a>
-    </div>
-  </div>
-</section>
-
-<!-- À propos -->
-<section id="about" class="py-20 px-6 bg-slate-800">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-8">À propos</h2>
-    <div class="grid md:grid-cols-2 gap-12">
-      <div>
-        <h3 class="text-2xl font-bold mb-4 text-blue-400">Qui suis-je?</h3>
-        <p class="text-gray-300 leading-relaxed mb-4">
-          Je suis Firas, étudiant en informatique orienté systèmes, cloud et cybersécurité. Actuellement en alternance comme Mentor en Informatique chez Ynov Campus, j'accompagne les étudiants dans leurs projets techniques.
-        </p>
-        <p class="text-gray-300 leading-relaxed">
-          Je suis passionné par l'automatisation d'infrastructure, la sécurité offensive et les home labs. J'aime construire des solutions robustes et sécurisées.
-        </p>
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-slate-950/90 backdrop-blur-sm z-50 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Firas B.</h1>
+      <div class="hidden md:flex gap-8">
+        <a href="#about" class="hover:text-blue-400 transition">À propos</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Compétences</a>
+        <a href="#projects" class="hover:text-blue-400 transition">Projets</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
       </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-4 text-blue-400">Formation</h3>
-        <div class="space-y-4">
-          <div class="border-l-4 border-blue-500 pl-4">
-            <p class="font-semibold">Mastère Expert en Cloud, Sécurité & Infrastructure</p>
-            <p class="text-sm text-gray-400">Ynov Campus • 2025-2027</p>
-          </div>
-          <div class="border-l-4 border-blue-500 pl-4">
-            <p class="font-semibold">Licence MIAGE</p>
-            <p class="text-sm text-gray-400">Institut Supérieur de Gestion, Tunisie • 2013-2016</p>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient pt-32 pb-20 text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <img src="profile.jpg" alt="Firas" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+      <h1 class="text-5xl font-bold mb-4">Firas Bouricha</h1>
+      <!--<p class="text-xl text-blue-100 mb-4">DevOps | Cybersécurité | Sys Admin</p> -->
+      <p class="text-lg text-blue-50 mb-8 max-w-2xl mx-auto">Étudiant en Mastère Cloud, Sécurité & Infrastructure @ Ynov
+        Campus. Passionné par l'automatisation, les systèmes et la cybersécurité.</p>
+      <div class="flex gap-4 justify-center">
+        <a href="#contact"
+          class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">Me Contacter</a>
+        <a href="https://github.com/fibou1" target="_blank"
+          class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="about" class="py-20 px-6 bg-slate-800">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-8">À propos</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-blue-400">Qui suis-je?</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Je suis Firas, étudiant en informatique orienté systèmes, cloud et cybersécurité. Actuellement en alternance
+            comme Mentor en Informatique chez Ynov Campus, j'accompagne les étudiants dans leurs projets techniques.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            Je suis passionné par l'automatisation d'infrastructure, la sécurité offensive et les home labs. J'aime
+            construire des solutions robustes et sécurisées.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-blue-400">Formation</h3>
+          <div class="space-y-4">
+            <div class="border-l-4 border-blue-500 pl-4">
+              <p class="font-semibold">Mastère Expert en Cloud, Sécurité & Infrastructure</p>
+              <p class="text-sm text-gray-400">Ynov Campus • 2025-2027</p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+              <p class="font-semibold">Licence MIAGE</p>
+              <p class="text-sm text-gray-400">Institut Supérieur de Gestion, Tunisie • 2013-2016</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Compétences -->
-<section id="skills" class="py-20 px-6">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-12">Compétences Techniques</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="skill-card border border-blue-500/50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-4 text-blue-400">Infrastructure</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li>✓ Linux (Ubuntu, CentOS)</li>
-          <li>✓ Windows Server</li>
-          <li>✓ Proxmox</li>
-          <li>✓ Networking</li>
-        </ul>
-      </div>
-      <div class="skill-card border border-blue-500/50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-4 text-blue-400">DevOps</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li>✓ Docker</li>
-          <li>✓ Terraform</li>
-          <li>✓ Azure</li>
-          <li>✓ Bash/Scripting</li>
-        </ul>
-      </div>
-      <div class="skill-card border border-blue-500/50 p-6 rounded-lg">
-        <h3 class="text-xl font-bold mb-4 text-blue-400">Cybersécurité</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li>✓ Hardening Linux</li>
-          <li>✓ Fail2ban</li>
-          <li>✓ SSH Config</li>
-          <li>✓ Security Basics</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-12 grid md:grid-cols-2 gap-6">
-      <div class="bg-slate-800 p-6 rounded-lg">
-        <h3 class="font-bold mb-2">Langues</h3>
-        <p class="text-gray-300">🇬🇧 Anglais (C1) • 🇩🇪 Allemand (B2) • 🇫🇷 Français (Natif)</p>
-      </div>
-      <div class="bg-slate-800 p-6 rounded-lg">
-        <h3 class="font-bold mb-2">Localisation</h3>
-        <p class="text-gray-300">📍 Côte d'Azur • Mobilité Île-de-France</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projets -->
-<section id="projects" class="py-20 px-6 bg-slate-800">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-bold mb-12">Projets</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="project-card bg-slate-700 p-6 rounded-lg border border-slate-600">
-        <h3 class="text-2xl font-bold mb-2 text-blue-400">VMasService</h3>
-        <p class="text-gray-400 text-sm mb-4">Automatisation de VMs via formulaire</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">Terraform</span>
-          <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">Proxmox</span>
-          <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">GLPI</span>
-          <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">Semaphore</span>
+  <!-- Compétences -->
+  <section id="skills" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12">Compétences Techniques</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="skill-card border border-blue-500/50 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4 text-blue-400">Infrastructure</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>✓ Linux (Ubuntu, CentOS)</li>
+            <li>✓ Windows Server</li>
+            <li>✓ Proxmox</li>
+            <li>✓ Networking</li>
+          </ul>
         </div>
-        <p class="text-gray-400 text-sm mt-4">À améliorer prochainement...</p>
+        <div class="skill-card border border-blue-500/50 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4 text-blue-400">DevOps</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>✓ Docker</li>
+            <li>✓ Terraform</li>
+            <li>✓ Azure</li>
+            <li>✓ Bash/Scripting</li>
+          </ul>
+        </div>
+        <div class="skill-card border border-blue-500/50 p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4 text-blue-400">Cybersécurité</h3>
+          <ul class="space-y-2 text-gray-300">
+
+            <li>✓ Security Basics</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Langues</h3>
+          <p class="text-gray-300"> Anglais (C1) • Allemand (B1) </p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Localisation</h3>
+          <p class="text-gray-300">📍 Côte d'Azur • Mobilité Île-de-France</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="py-20 px-6">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8">Me Contacter</h2>
-    <div class="grid md:grid-cols-3 gap-8 mb-12">
-      <a href="mailto:firasbouricha1@gmail.com" class="bg-blue-600 hover:bg-blue-700 p-6 rounded-lg transition">
-        <p class="font-bold mb-2">Email</p>
-        <p class="text-sm text-gray-200">firasbouricha1@gmail.com</p>
-      </a>
-      <a href="https://linkedin.com/in/firas-bouricha" target="_blank" class="bg-blue-600 hover:bg-blue-700 p-6 rounded-lg transition">
-        <p class="font-bold mb-2">LinkedIn</p>
-        <p class="text-sm text-gray-200">firas-bouricha</p>
-      </a>
-      <a href="https://github.com/fibou1" target="_blank" class="bg-blue-600 hover:bg-blue-700 p-6 rounded-lg transition">
-        <p class="font-bold mb-2">GitHub</p>
-        <p class="text-sm text-gray-200">fibou1</p>
-      </a>
+  <!-- Projets -->
+  <section id="projects" class="py-20 px-6 bg-slate-800">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12">Projets</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="project-card bg-slate-700 p-6 rounded-lg border border-slate-600">
+          <h3 class="text-2xl font-bold mb-2 text-blue-400">VMasService</h3>
+          <p class="text-gray-400 text-sm mb-4">Automatisation de VMs via formulaire</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">Terraform</span>
+            <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">Proxmox</span>
+            <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">GLPI</span>
+            <span class="px-3 py-1 bg-blue-500/30 rounded-full text-sm">Semaphore</span>
+          </div>
+          <p class="text-gray-400 text-sm mt-4">À améliorer prochainement...</p>
+        </div>
+      </div>
     </div>
-    <p class="text-gray-400">Ouvert aux opportunités de stage, alternance et collaborations DevOps/Cyber</p>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-gray-400">
-  <p>© 2026 Firas Bouricha. Portfolio DevOps & Linux</p>
-</footer>
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8">Me Contacter</h2>
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <a href="mailto:firas.bouricha@outlook.fr" class="bg-blue-600 hover:bg-blue-700 p-6 rounded-lg transition">
+          <p class="font-bold mb-2">Email</p>
+          <p class="text-sm text-gray-200">Firas.bouricha@outlook.fr</p>
+        </a>
+        <a href="https://linkedin.com/in/firas-bouricha" target="_blank"
+          class="bg-blue-600 hover:bg-blue-700 p-6 rounded-lg transition">
+          <p class="font-bold mb-2">LinkedIn</p>
+          <p class="text-sm text-gray-200">firas-bouricha</p>
+        </a>
+        <a href="https://github.com/fibou1" target="_blank"
+          class="bg-blue-600 hover:bg-blue-700 p-6 rounded-lg transition">
+          <p class="font-bold mb-2">GitHub</p>
+          <p class="text-sm text-gray-200">fibou1</p>
+        </a>
+      </div>
+      <p class="text-gray-400">Ouvert aux opportunités de stage, alternance et collaborations DevOps/Cyber</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-gray-400">
+    <p>© 2026 Firas Bouricha. Portfolio DevOps & Linux</p>
+  </footer>
 
 </body>
+
 </html>
