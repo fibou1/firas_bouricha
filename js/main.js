@@ -11,19 +11,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const fetchPromises = components.map(component =>
         fetch(component.url)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                return response.text();
+            })
             .then(data => {
-                document.getElementById(component.id).innerHTML = data;
+                const container = document.getElementById(component.id);
+                if (!container) {
+                    throw new Error(`Missing container #${component.id}`);
+                }
+                container.innerHTML = data;
             })
             .catch(error => console.error(`Error loading ${component.url}:`, error))
     );
 
-    Promise.all(fetchPromises).then(() => {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
+    function setupMobileMenu() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (!menuButton || !mobileMenu) {
+            return;
+        }
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+            mobileMenu.classList.toggle('hidden');
         });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    Promise.all(fetchPromises).then(() => {
+        setupMobileMenu();
+
+        if (window.AOS) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        }
     });
 });
