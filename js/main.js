@@ -9,12 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'footer-container', url: 'templates/footer.html' }
     ];
 
-    components.forEach(component => {
+    const fetchPromises = components.map(component =>
         fetch(component.url)
             .then(response => response.text())
             .then(data => {
                 document.getElementById(component.id).innerHTML = data;
             })
-            .catch(error => console.error(`Error loading ${component.url}:`, error));
+            .catch(error => console.error(`Error loading ${component.url}:`, error))
+    );
+
+    Promise.all(fetchPromises).then(() => {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
     });
 });
