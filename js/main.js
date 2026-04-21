@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'skills-container', url: 'templates/skills.html' },
         { id: 'projects-container', url: 'templates/projects.html' },
         { id: 'contact-container', url: 'templates/contact.html' },
-        { id: 'footer-container', url: 'templates/footer.html' }
+        { id: 'footer-container', url: 'templates/footer.html' },
+        { id: 'toast-container', url: 'templates/toast.html' }
     ];
 
     const fetchPromises = components.map(component =>
@@ -49,8 +50,70 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function setupMentorToast() {
+        const toast = document.getElementById('mentor-toast');
+        if (!toast) {
+            return;
+        }
+
+        const discussButton = document.getElementById('toast-discuss');
+        const ignoreButton = document.getElementById('toast-ignore');
+        const closeButton = document.getElementById('toast-close');
+        let isClosing = false;
+
+        const hideToast = () => {
+            if (isClosing) {
+                return;
+            }
+
+            isClosing = true;
+            toast.classList.remove('opacity-100', 'translate-y-0');
+            toast.classList.add('opacity-0', 'translate-y-6');
+
+            window.setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 500);
+        };
+
+        window.setTimeout(() => {
+            toast.classList.remove('hidden');
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('opacity-0', 'translate-y-6');
+                toast.classList.add('opacity-100', 'translate-y-0');
+            });
+        }, 2000);
+
+        [ignoreButton, closeButton].forEach(button => {
+            if (!button) {
+                return;
+            }
+
+            button.addEventListener('click', event => {
+                event.preventDefault();
+                hideToast();
+            });
+        });
+
+        if (discussButton) {
+            discussButton.addEventListener('click', event => {
+                event.preventDefault();
+                hideToast();
+
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
+
+                window.location.hash = 'contact';
+            });
+        }
+    }
+
     Promise.all(fetchPromises).then(() => {
         setupMobileMenu();
+        setupMentorToast();
 
         if (window.AOS) {
             AOS.init({
